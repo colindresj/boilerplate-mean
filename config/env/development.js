@@ -3,6 +3,6 @@
 module.exports = {
   env: 'development',
   mongo: {
-    uri: 'mongodb://localhost/set-dev'
+    uri: 'mongodb://localhost/gobi-dev'
   }
 };
