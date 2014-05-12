@@ -1,0 +1,8 @@
+{
+  "name": "set",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "author": "JC <j@colindres.me>",
+  "license": "MIT"
+}
