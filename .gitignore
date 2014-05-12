@@ -1,0 +1,9 @@
+*.log
+.DS_Store
+.lock-wscript
+.tmp/
+bower_components/
+coverage/
+dist/
+logs/
+node_modules/

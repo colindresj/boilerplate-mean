@@ -1,0 +1,33 @@
+{
+    "bitwise": false, // **
+    "browser": true,
+    "camelcase": true,
+    "curly": true,
+    "devel": true,
+    "eqeqeq": true,
+    "esnext": true,
+    "globals": {
+        "angular": true
+    }
+    "indent": 2,
+    "inmed": true,
+    "latedef": true,
+    "newcap": true,
+    "noarg": true,
+    "node": true,
+    "noempty": true,
+    "predef": {
+        "define",
+        "exports",
+        "inject",
+        "module",
+        "require"
+    },
+    "quotmark": "single",
+    "regexp": true,
+    "smarttabs": true,
+    "strict": true,
+    "trailing": true,
+    "undef": true,
+    "unused": true
+}
