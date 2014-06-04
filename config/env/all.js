@@ -7,7 +7,7 @@ module.exports = {
   port: process.env.PORT || 8080,
   templateEngine: 'swig',
   app: {
-    title: 'Set Application'
+    title: 'Gobi MEAN Application'
   },
   mongo: {
     options: {},
