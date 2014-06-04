@@ -61,4 +61,6 @@ module.exports = function(db) {
       collection: config.mongo.sessionCollection
     })
   }));
+
+  return app;
 };

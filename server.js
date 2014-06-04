@@ -12,7 +12,7 @@ var app = require('./config/express')(db);
 // Start the app
 app.listen(config.port, config.hostname);
 console.log('App running on port ' + config.port);
-console.log('Currently running a ' + env + ' environment');
+console.log('Currently running a ' + process.env.NODE_ENV + ' environment');
 
 // Expose the app
 exports = module.exports = app;
