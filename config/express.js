@@ -17,6 +17,12 @@ module.exports = function(db) {
   app.use(require('connect-flash')());
   app.use(require('express-validator')());
 
+  // Enable compression
+  app.use(require('compression')({
+    threshold: 512,
+    level: 7 // zlib compression level 0-9
+  }));
+
   if (process.env.NODE_ENV === 'development') {
     app.use(require('morgan')('dev'));
     app.use(require('connect-livereload')());
