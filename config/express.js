@@ -36,6 +36,12 @@ module.exports = function(db) {
   // Enable jsonp
   app.enable('jsonp callback');
 
+  // Set templating
+  app.engine('html', require('consolidate')[config.templateEngine]);
+
+  // Use HTML files
+  app.set('view engine', 'html');
+
   // Set the views path
   app.set('views', config.root + '/server/views');
 
@@ -55,5 +61,4 @@ module.exports = function(db) {
       collection: config.mongo.sessionCollection
     })
   }));
-
 };
