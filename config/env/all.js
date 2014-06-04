@@ -9,6 +9,8 @@ module.exports = {
     title: 'Set Application'
   },
   mongo: {
-    options: {}
+    options: {},
+    sessionSecret: 'gobi',
+    sessionCollection: 'gobi-collection'
   }
 };

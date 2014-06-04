@@ -4,7 +4,8 @@ var express = require('express');
 
 module.exports = function(db) {
   var app = express(),
-      config = require('./config');
+      config = require('./config'),
+      session = require('express-session');
 
   app.locals.title = config.app.title;
 
@@ -44,5 +45,15 @@ module.exports = function(db) {
   // Load up static assets
   app.use(require('serve-favicon')(config.root + '/public/favicon.ico'));
   app.use('/public', express.static(config.root + '/public'));
+
+  // Mongo session persistence
+  var MongoStore = require('connect-mongo')(session);
+  app.use(session({
+    secret: config.mongo.sessionSecret,
+    store: new MongoStore({
+      db: db.connection.db,
+      collection: config.mongo.sessionCollection
+    })
+  }));
 
 };
