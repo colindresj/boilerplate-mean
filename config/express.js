@@ -5,7 +5,8 @@ var express = require('express');
 module.exports = function(db) {
   var app = express(),
       config = require('./config'),
-      session = require('express-session');
+      session = require('express-session'),
+      helmet = require('helmet');
 
   app.locals.title = config.app.title;
 
@@ -23,6 +24,14 @@ module.exports = function(db) {
     threshold: 512,
     level: 7 // zlib compression level 0-9
   }));
+
+  // Security headers
+  app.use(helmet.csp());
+  app.use(helmet.iexss());
+  app.use(helmet.ienoopen());
+  app.use(helmet.xframe('deny'));
+  app.use(helmet.contentTypeOptions());
+  app.disable('x-powered-by')
 
   if (process.env.NODE_ENV === 'development') {
     app.use(require('morgan')('dev'));
