@@ -61,6 +61,9 @@ module.exports = function(db) {
   app.use(require('serve-favicon')(config.root + '/public/favicon.ico'));
   app.use('/public', express.static(config.root + '/public'));
 
+  // Load routes
+  require(config.root + '/server/routes')(app);
+
   // Mongo session persistence
   var MongoStore = require('connect-mongo')(session);
   app.use(session({
