@@ -26,12 +26,15 @@ module.exports = function(db) {
   }));
 
   // Security headers
-  app.use(helmet.csp());
   app.use(helmet.iexss());
   app.use(helmet.ienoopen());
   app.use(helmet.xframe('deny'));
   app.use(helmet.contentTypeOptions());
-  app.disable('x-powered-by')
+  app.disable('x-powered-by');
+
+  if (process.env.NODE_ENV === 'production') {
+    app.use(helmet.csp());
+  }
 
   if (process.env.NODE_ENV === 'development') {
     app.use(require('morgan')('dev'));
