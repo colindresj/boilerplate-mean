@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = function(app) {
+  var index = require(__dirname + '/controllers/index_controller');
+
   app.route('/')
-  .get(function(req, res){
-    res.json({'hi': 'world'});
-  });
+    .get(index.index);
 };
