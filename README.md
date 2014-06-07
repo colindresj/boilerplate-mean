@@ -1,5 +1,5 @@
-gobi
+Boilerplate MEAN
 ====
 **__WIP__**
 
-My ideal mean setup.
+My ideal MEAN setup.

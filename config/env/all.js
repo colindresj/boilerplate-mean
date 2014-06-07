@@ -7,11 +7,11 @@ module.exports = {
   port: process.env.PORT || 8080,
   templateEngine: 'swig',
   app: {
-    title: 'Gobi MEAN Application'
+    title: 'Boilerplate MEAN'
   },
   mongo: {
     options: {},
-    sessionSecret: 'gobi',
-    sessionCollection: 'gobi-collection'
+    sessionSecret: 'boilerplate-mean',
+    sessionCollection: 'boilerplate-mean-collection'
   }
 };

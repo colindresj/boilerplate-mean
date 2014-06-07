@@ -3,6 +3,6 @@
 module.exports = {
   env: 'development',
   mongo: {
-    uri: 'mongodb://localhost/gobi-dev'
+    uri: 'mongodb://localhost/boilerplate-mean-dev'
   }
 };

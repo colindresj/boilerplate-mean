@@ -5,6 +5,6 @@ module.exports = {
   mongo: {
     uri: process.env.MONGOHQ_URL ||
          process.env.MONGOLAB_URI ||
-         'mongodb://localhost/gobi',
+         'mongodb://localhost/boilerplate-mean',
   }
 };
