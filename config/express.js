@@ -65,7 +65,8 @@ module.exports = function(db) {
   app.use('/public', express.static(config.root + '/public'));
 
   // Load routes
-  require(config.root + '/server/routes')(app);
+  require(config.root + '/server/routes/index_routes')(app);
+  // require(config.root + '/server/routes/posts_routes')(app);
 
   // Mongo session persistence
   var MongoStore = require('connect-mongo')(session);
