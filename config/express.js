@@ -60,13 +60,13 @@ module.exports = function(db) {
   // Pretty HTML
   app.locals.pretty = true;
 
+  // Load routes
+  require(config.root + '/server/routes/index_routes')(app);
+  require(config.root + '/server/routes/posts_routes')(app);
+
   // Load up static assets
   app.use(require('serve-favicon')(config.root + '/public/favicon.ico'));
   app.use('/public', express.static(config.root + '/public'));
-
-  // Load routes
-  require(config.root + '/server/routes/index_routes')(app);
-  // require(config.root + '/server/routes/posts_routes')(app);
 
   // Mongo session persistence
   var MongoStore = require('connect-mongo')(session);
