@@ -1,6 +1,6 @@
 'use strict';
 
-// var Post = require(__dirname + '../models/post')
+var Post = require(__dirname + '/../models/post');
 
 exports.index = function(req, res) {
   // posts#index
