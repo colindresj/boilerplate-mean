@@ -1,0 +1,37 @@
+{
+  "name": "boilerplate-mean",
+  "version": "0.0.1",
+  "homepage": "https://github.com/colindresj/boilerplate-mean",
+  "authors": [
+    "JC <jorge.e.colindres@gmail.com>"
+  ],
+  "description": "A MEAN stack template",
+  "main": "server.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "mongo",
+    "express",
+    "angular",
+    "node",
+    "mean"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.17",
+    "angular-resource": "~1.2.17",
+    "angular-route": "~1.2.17"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.2.17"
+  }
+}
