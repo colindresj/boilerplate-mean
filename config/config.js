@@ -9,9 +9,7 @@ process.env.NODE_ENV = ~fs.readdirSync('./config/env').map(function(file) {
     return file.slice(0, -3);
 }).indexOf(process.env.NODE_ENV) > 0 ? process.env.NODE_ENV : 'development';
 
-
-// Extend the base configuration
-// and environment specific config
+// Extend the base configuration and environment specific config
 module.exports = _.merge(
   require('./env/all'),
   require('./env/' + process.env.NODE_ENV) || {}

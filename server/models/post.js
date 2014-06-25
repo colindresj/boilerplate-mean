@@ -42,7 +42,7 @@ postSchema.virtual('getterSetterName').get(function() {
 });
 
 // Validations
-postSchema.path('validationName').validate(function() {
+postSchema.path('title').validate(function() {
   // return validation result
 }, 'error message');
 
