@@ -6,7 +6,9 @@ module.exports = function(db) {
   var app = express(),
       config = require('./config'),
       session = require('express-session'),
-      helmet = require('helmet');
+      helmet = require('helmet'),
+      fs = require('fs'),
+      path = require('path');
 
   app.locals.title = config.app.title;
 
@@ -61,8 +63,10 @@ module.exports = function(db) {
   app.locals.pretty = true;
 
   // Load routes
-  require(config.root + '/server/routes/index_routes')(app);
-  require(config.root + '/server/routes/posts_routes')(app);
+  var routesPath = path.join(config.root, 'server/routes');
+  fs.readdirSync(routesPath).forEach(function(file) {
+    require(routesPath + '/' + file)(app);
+  });
 
   // Load up static assets
   app.use(require('serve-favicon')(config.root + '/public/favicon.ico'));
