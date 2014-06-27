@@ -1,5 +1,4 @@
 - Use more robust function for bootstraping models and routes
-- Create dummy data for seed (faker?)
 - Use passport for user auth
 - Use promises instead of nested callbacks
 - Add unit tests

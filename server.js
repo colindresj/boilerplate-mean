@@ -17,6 +17,9 @@ fs.readdirSync(modelsPath).forEach(function(file) {
 // Build the app
 var app = require('./config/express')(db);
 
+// Seed the database with dummy data
+require('./config/seeds');
+
 // Start the app
 app.listen(config.port, config.hostname);
 console.log('App running on port ' + config.port);
