@@ -1,9 +1,9 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-    Schema = mongoose.Schema;
+    Schema = mongoose.Schema, postSchema;
 
-var postSchema = new Schema({
+postSchema = new Schema({
   created: {
     type: Date,
     default: Date.now()

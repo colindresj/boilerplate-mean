@@ -3,10 +3,11 @@
 var mongoose = require('mongoose'),
     path = require('path'),
     config = require('./config/config'),
-    utils = require('./lib/utils');
+    utils = require('./lib/utils'),
+    db, app;
 
 // Connect to Mongo
-var db = mongoose.connect(config.mongo.uri, config.mongo.options);
+db = mongoose.connect(config.mongo.uri, config.mongo.options);
 
 // Load the models
 utils.loadFiles(path.join(__dirname, 'server/models'), function (path) {
@@ -14,7 +15,7 @@ utils.loadFiles(path.join(__dirname, 'server/models'), function (path) {
 });
 
 // Build the app
-var app = require('./config/express')(db);
+app = require('./config/express')(db);
 
 // Seed the database with dummy data
 require('./config/seeds');

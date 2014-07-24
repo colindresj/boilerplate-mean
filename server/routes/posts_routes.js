@@ -2,7 +2,7 @@
 
 var express = require('express');
 
-module.exports = function(app) {
+module.exports = function (app) {
   var postsRouter = express.Router(),
       postsController = require(__dirname + '/../controllers/posts_controller');
 

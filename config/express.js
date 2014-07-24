@@ -2,14 +2,15 @@
 
 var express = require('express');
 
-module.exports = function(db) {
+module.exports = function (db) {
   var app = express(),
       config = require('./config'),
       session = require('express-session'),
       helmet = require('helmet'),
       fs = require('fs'),
       path = require('path'),
-      utils = require(config.root + '/lib/utils');
+      utils = require(config.root + '/lib/utils'),
+      MongoStore;
 
   app.locals.title = config.app.title;
 
@@ -73,7 +74,7 @@ module.exports = function(db) {
   app.use('/public', express.static(config.root + '/public'));
 
   // Mongo session persistence
-  var MongoStore = require('connect-mongo')(session);
+  MongoStore = require('connect-mongo')(session);
   app.use(session({
     secret: config.mongo.sessionSecret,
     store: new MongoStore({
