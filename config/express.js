@@ -8,7 +8,8 @@ module.exports = function(db) {
       session = require('express-session'),
       helmet = require('helmet'),
       fs = require('fs'),
-      path = require('path');
+      path = require('path'),
+      utils = require(config.root + '/lib/utils');
 
   app.locals.title = config.app.title;
 
@@ -63,9 +64,8 @@ module.exports = function(db) {
   app.locals.pretty = true;
 
   // Load routes
-  var routesPath = path.join(config.root, 'server/routes');
-  fs.readdirSync(routesPath).forEach(function(file) {
-    require(routesPath + '/' + file)(app);
+  utils.loadFiles(path.join(config.root, 'server/routes'), function (path) {
+    require(path)(app);
   });
 
   // Load up static assets

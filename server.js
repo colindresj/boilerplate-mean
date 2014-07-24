@@ -1,17 +1,16 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-    fs = require('fs'),
     path = require('path'),
-    config = require('./config/config');
+    config = require('./config/config'),
+    utils = require('./lib/utils');
 
 // Connect to Mongo
 var db = mongoose.connect(config.mongo.uri, config.mongo.options);
 
 // Load the models
-var modelsPath = path.join(__dirname, 'server/models');
-fs.readdirSync(modelsPath).forEach(function(file) {
-  require(modelsPath + '/' + file);
+utils.loadFiles(path.join(__dirname, 'server/models'), function (path) {
+  require(path);
 });
 
 // Build the app
