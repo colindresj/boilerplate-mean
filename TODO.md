@@ -1,6 +1,7 @@
 - Use more robust function for bootstraping models and routes
 - Use passport for user auth
 - Add unit tests
+- Namespace and version api routes
 
 ##Gulp
 - Modular gulp build
