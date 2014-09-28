@@ -9,7 +9,7 @@ exports.index = function (req, res) {
   .then(function (posts) {
     res.json(posts);
   }, function (err) {
-    res.send(err);
+    next(err);
   });
 };
 
@@ -23,17 +23,17 @@ exports.create = function (req, res) {
     res.json(posts);
   })
   .catch(function (err) {
-    res.send(err)
+    next(err);
   });
 };
 
 // posts#show
-exports.show = function (req, res) {
+exports.show = function (req, res, next) {
   $$.getResource(req.params.id)
   .then(function (post) {
     res.json(post);
   }, function (err) {
-    res.send(err);
+    next(err);
   });
 };
 
@@ -49,7 +49,7 @@ exports.update = function (req, res) {
     res.json(post);
   })
   .catch(function (err) {
-    res.send(err);
+    next(err);
   });
 };
 
@@ -66,6 +66,6 @@ exports.destroy = function (req, res) {
     res.json(posts);
   })
   .catch(function (err) {
-    res.send(err);
+    next(err);
   });
 };
