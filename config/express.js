@@ -76,6 +76,8 @@ module.exports = function (db) {
   // Mongo session persistence
   MongoStore = require('connect-mongo')(session);
   app.use(session({
+    resave: true,
+    saveUninitialized: true,
     secret: config.mongo.sessionSecret,
     store: new MongoStore({
       db: db.connection.db,
