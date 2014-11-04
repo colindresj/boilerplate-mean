@@ -17,7 +17,7 @@ module.exports = function (db) {
   app.set('showStackError', false);
 
   // Express middleware
-  app.use(require('body-parser')());
+  app.use(require('body-parser').json());
   app.use(require('method-override')());
   app.use(require('cookie-parser')());
   app.use(require('connect-flash')());
