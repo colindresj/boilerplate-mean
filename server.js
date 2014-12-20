@@ -18,7 +18,9 @@ utils.loadFiles(path.join(__dirname, 'server/models'), function (path) {
 app = require('./config/express')(db);
 
 // Seed the database with dummy data
-require('./config/seeds');
+if (process.env.NODE_ENV === 'development') {
+  require('./config/seeds');
+}
 
 // Start the app
 app.listen(config.port, config.hostname);
