@@ -44,11 +44,11 @@ module.exports = function(db) {
   app.use(helmet.xssFilter());
   app.use(helmet.ienoopen());
   app.use(helmet.frameguard('deny'));
-  appu.use(helmet.noSniff());
+  app.use(helmet.noSniff());
   app.disable('x-powered-by');
 
   if (process.env.NODE_ENV === 'production') {
-    app.use(helmet.csp());
+    app.use(helmet.csp(config.csp));
   }
 
   if (process.env.NODE_ENV === 'development') {

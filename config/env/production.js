@@ -6,5 +6,8 @@ module.exports = {
     uri: process.env.MONGOHQ_URL ||
          process.env.MONGOLAB_URI ||
          'mongodb://localhost/boilerplate-mean',
+  },
+  csp: {
+    defaultSrc: ["'self'"]
   }
 };
