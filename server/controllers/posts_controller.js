@@ -1,11 +1,11 @@
 'use strict';
 
 var _ = require('lodash'),
-    $$ = require('../utils/resource-methods')('Post');
+    postCRUD = require('../utils/resource_methods')('Post');
 
 // posts#index
 exports.index = function(req, res) {
-  $$.getResources()
+  postCRUD.getResources()
   .then(function(posts) {
     res.json(posts);
   }, function(err) {
@@ -15,9 +15,9 @@ exports.index = function(req, res) {
 
 // posts#create
 exports.create = function(req, res) {
-  $$.createResource(req.body)
+  postCRUD.createResource(req.body)
   .then(function() {
-    return $$.getResources();
+    return postCRUD.getResources();
   })
   .then(function(posts) {
     res.json(posts);
@@ -29,7 +29,7 @@ exports.create = function(req, res) {
 
 // posts#show
 exports.show = function(req, res, next) {
-  $$.getResource(req.params.id)
+  postCRUD.getResource(req.params.id)
   .then(function(post) {
     res.json(post);
   }, function(err) {
@@ -39,11 +39,11 @@ exports.show = function(req, res, next) {
 
 // posts#update
 exports.update = function(req, res) {
-  $$.getResource(req.params.id)
+  postCRUD.getResource(req.params.id)
   .then(function(post) {
     post = _.extend(post, req.body);
 
-    return $$.saveResource(post);
+    return postCRUD.saveResource(post);
   })
   .then(function(post) {
     res.json(post);
@@ -55,12 +55,12 @@ exports.update = function(req, res) {
 
 // posts#destroy
 exports.destroy = function(req, res) {
-  $$.getResource(req.params.id)
+  postCRUD.getResource(req.params.id)
   .then(function(post) {
-    return $$.removeResource(post);
+    return postCRUD.removeResource(post);
   })
   .then(function() {
-    return $$.getResources();
+    return postCRUD.getResources();
   })
   .then(function(posts) {
     res.json(posts);
