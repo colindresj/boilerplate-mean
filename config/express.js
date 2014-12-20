@@ -4,12 +4,10 @@ var express = require('express');
 
 module.exports = function(db) {
   var app = express(),
-      config = require('./config'),
       session = require('express-session'),
       helmet = require('helmet'),
       fs = require('fs'),
       path = require('path'),
-      utils = require(config.root + '/lib/utils'),
       bodyParser = require('body-parser'),
       methodOverride = require('method-override'),
       cookieParser = require('cookie-parser'),
@@ -22,6 +20,8 @@ module.exports = function(db) {
       templates = require('consolidate'),
       favicon = require('serve-favicon'),
       mongo = require('connect-mongo'),
+      config = require('./config'),
+      utils = require(config.root + '/lib/utils/'),
       MongoStore;
 
   app.locals.title = config.app.title;
