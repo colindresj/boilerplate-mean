@@ -13,8 +13,8 @@ for (i = 10; i >= 0; i--) {
   });
 }
 
-Post.find({}).remove(function () {
-  Post.create(seeds, function (err, post) {
+Post.find({}).remove(function() {
+  Post.create(seeds, function(err, post) {
     console.log('Database seeded with dummy data.')
   });
 });

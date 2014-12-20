@@ -2,7 +2,7 @@
 
 var express = require('express');
 
-module.exports = function (db) {
+module.exports = function(db) {
   var app = express(),
       config = require('./config'),
       session = require('express-session'),
@@ -76,7 +76,7 @@ module.exports = function (db) {
   app.locals.pretty = true;
 
   // Load routes
-  utils.loadFiles(path.join(config.root, 'server/routes'), function (path) {
+  utils.loadFiles(path.join(config.root, 'server/routes'), function(path) {
     require(path)(app);
   });
 

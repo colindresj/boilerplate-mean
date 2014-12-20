@@ -10,7 +10,7 @@ var mongoose = require('mongoose'),
 db = mongoose.connect(config.mongo.uri, config.mongo.options);
 
 // Load the models
-utils.loadFiles(path.join(__dirname, 'server/models'), function (path) {
+utils.loadFiles(path.join(__dirname, 'server/models'), function(path) {
   require(path);
 });
 

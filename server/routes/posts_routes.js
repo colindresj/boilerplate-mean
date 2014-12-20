@@ -2,7 +2,7 @@
 
 var express = require('express');
 
-module.exports = function (app) {
+module.exports = function(app) {
   var postsRouter = express.Router(),
       postsController = require(__dirname + '/../controllers/posts_controller');
 
@@ -15,7 +15,7 @@ module.exports = function (app) {
     .put(postsController.update)
     .delete(postsController.destroy);
 
-  app.use(function (req, res, next) {
+  app.use(function(req, res, next) {
     if (req.originalUrl.indexOf('api') === -1) {
       return res.redirect('/');
     }
