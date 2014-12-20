@@ -41,10 +41,10 @@ module.exports = function(db) {
   }));
 
   // Security headers
-  app.use(helmet.iexss());
+  app.use(helmet.xssFilter());
   app.use(helmet.ienoopen());
-  app.use(helmet.xframe('deny'));
-  app.use(helmet.contentTypeOptions());
+  app.use(helmet.frameguard('deny'));
+  appu.use(helmet.noSniff());
   app.disable('x-powered-by');
 
   if (process.env.NODE_ENV === 'production') {
