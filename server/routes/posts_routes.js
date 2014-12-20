@@ -15,13 +15,5 @@ module.exports = function(app) {
     .put(postsController.update)
     .delete(postsController.destroy);
 
-  app.use(function(req, res, next) {
-    if (req.originalUrl.indexOf('api') === -1) {
-      return res.redirect('/');
-    }
-
-    next();
-  });
-
   app.use('/api/v1', postsRouter);
 };
