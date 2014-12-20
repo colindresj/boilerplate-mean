@@ -10,6 +10,18 @@ module.exports = function (db) {
       fs = require('fs'),
       path = require('path'),
       utils = require(config.root + '/lib/utils'),
+      bodyParser = require('body-parser'),
+      methodOverride = require('method-override'),
+      cookieParser = require('cookie-parser'),
+      flash = require('connect-flash'),
+      validator = require('express-validator'),
+      compression = require('compression'),
+      morgan = require('morgan'),
+      liveReload = require('connect-livereload'),
+      errorhandler = require('errorhandler'),
+      templates = require('consolidate'),
+      favicon = require('serve-favicon'),
+      mongo = require('connect-mongo'),
       MongoStore;
 
   app.locals.title = config.app.title;
@@ -17,14 +29,13 @@ module.exports = function (db) {
   app.set('showStackError', false);
 
   // Express middleware
-  app.use(require('body-parser').json());
-  app.use(require('method-override')());
-  app.use(require('cookie-parser')());
-  app.use(require('connect-flash')());
-  app.use(require('express-validator')());
+  app.use(bodyParser.json());
+  app.use(cookieParser());
+  app.use(flash());
+  app.use(validator());
 
   // Enable compression
-  app.use(require('compression')({
+  app.use(compression({
     threshold: 512,
     level: 7 // zlib compression level 0-9
   }));
@@ -41,9 +52,9 @@ module.exports = function (db) {
   }
 
   if (process.env.NODE_ENV === 'development') {
-    app.use(require('morgan')('dev'));
-    app.use(require('connect-livereload')());
-    app.use(require('errorhandler')());
+    app.use(morgan('dev'));
+    app.use(liveReload());
+    app.use(errorhandler());
 
     app.set('view cache', false);
     app.set('showStackError', true);
@@ -53,7 +64,7 @@ module.exports = function (db) {
   app.enable('jsonp callback');
 
   // Set templating
-  app.engine('html', require('consolidate')[config.templateEngine]);
+  app.engine('html', templates[config.templateEngine]);
 
   // Use HTML files
   app.set('view engine', 'html');
@@ -70,11 +81,11 @@ module.exports = function (db) {
   });
 
   // Load up static assets
-  app.use(require('serve-favicon')(config.root + '/public/favicon.ico'));
+  app.use(favicon(config.root + '/public/favicon.ico'));
   app.use('/public', express.static(config.root + '/public'));
 
   // Mongo session persistence
-  MongoStore = require('connect-mongo')(session);
+  MongoStore = mongo(session);
   app.use(session({
     resave: true,
     saveUninitialized: true,
