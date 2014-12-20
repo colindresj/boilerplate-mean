@@ -1,6 +1,11 @@
-- Use passport for user auth
+##Server-side
+- Improve server-side error handling and validation
+- Add authorization (mustbe)
+- Add authentication (passport, grant)
 - Add unit tests
-- Namespace and version api routes
+- Create REPL module
+- Look into lusca for added security
+- Look into moonboots for loading client side apps
 
 ##Gulp
 - Modular gulp build
@@ -15,5 +20,6 @@
 - Require istanbul
 - Add docker support
 - Add redis support
-- Add easy heroku deploy
-- Improve jshint
+- Add easy deploy (heroku, modulus, nodejitsu, digital ocean)
+- Switch to eslint
+- Match against idiomatic.js
