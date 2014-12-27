@@ -1,5 +1,6 @@
 'use strict';
 
+require('dotenv').load();
 var rootPath = require('path').normalize(__dirname + '/../..');
 
 module.exports = {
@@ -13,5 +14,6 @@ module.exports = {
     options: {},
     sessionSecret: 'boilerplate-mean',
     sessionCollection: 'boilerplate-mean-collection'
-  }
+  },
+  dotenv: process.env
 };

@@ -1,5 +1,5 @@
 ##Server-side
-- Improve server-side error handling and validation
+- Improve server-side error handling and validation (artisan)
 - Add authorization (mustbe)
 - Add authentication (passport, grant)
 - Add unit tests
