@@ -7,9 +7,6 @@
 - Look into lusca for added security
 - Look into moonboots for loading client side apps
 
-##Gulp
-- Modular gulp build
-
 ##Angular
 - Angular touch
 - Angular UI
