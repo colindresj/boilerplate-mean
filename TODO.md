@@ -6,6 +6,9 @@
 - Create REPL module
 - Look into lusca for added security
 - Look into moonboots for loading client side apps
+- Add logging (winston, bunyan, intel)
+- Add documentation support (Docco, JSDoc, apiDoc)
+- Support for websockets (maybe?)
 
 ##Angular
 - Angular touch
@@ -19,4 +22,8 @@
 - Add redis support
 - Add easy deploy (heroku, modulus, nodejitsu, digital ocean)
 - Switch to eslint
+- Add JSCS
+- David for npm modules
 - Match against idiomatic.js
+- Benchmarking (benchmark.js)
+- Make sending emails easy
