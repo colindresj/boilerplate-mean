@@ -14,8 +14,8 @@
     "cli-table": "^0.3.1",
     "compression": "^1.0.1",
     "connect-flash": "^0.1.1",
-    "connect-livereload": "~0.3.0",
     "connect-mongo": "~0.4.0",
+    "connect-livereload": "^0.5.2",
     "consolidate": "^0.10.0",
     "cookie-parser": "^1.1.0",
     "dotenv": "^0.4.0",
@@ -37,11 +37,11 @@
     "chai": "^1.9.1",
     "chalk": "^0.5.1",
     "david": "^6.0.1",
-    "faker": "^1.0.0",
+    "faker": "^2.1.1",
     "gulp": "^3.8.10",
     "gulp-notify": "^2.1.0",
     "gulp-util": "^3.0.1",
-    "mocha": "^1.21.1",
-    "supertest": "^0.13.0"
+    "mocha": "^2.1.0",
+    "supertest": "^0.15.0"
   }
 }
