@@ -25,6 +25,7 @@ module.exports = function(db) {
       MongoStore;
 
   app.locals.title = config.app.title;
+  app.locals.description = config.app.description;
 
   app.set('showStackError', false);
 

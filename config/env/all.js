@@ -8,12 +8,22 @@ module.exports = {
   port: process.env.PORT || 8000,
   templateEngine: 'swig',
   app: {
-    title: 'Boilerplate MEAN'
+    title: 'Boilerplate MEAN',
+    description: 'Lorem ipsum dolor'
   },
   mongo: {
     options: {},
     sessionSecret: 'boilerplate-mean',
     sessionCollection: 'boilerplate-mean-collection'
+  },
+  assets: {
+    styles: [],
+    scripts: [],
+    test: [],
+    vendor: {
+      styles: [],
+      scripts: []
+    }
   },
   dotenv: process.env
 };

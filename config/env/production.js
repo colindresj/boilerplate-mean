@@ -7,6 +7,15 @@ module.exports = {
          process.env.MONGOLAB_URI ||
          'mongodb://localhost/boilerplate-mean',
   },
+  assets: {
+    styles: [],
+    scripts: [],
+    test: [],
+    vendor: {
+      styles: [],
+      scripts: []
+    }
+  },
   csp: {
     defaultSrc: ["'self'"]
   }
