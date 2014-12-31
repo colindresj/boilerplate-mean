@@ -23,7 +23,6 @@
 - Add easy deploy (heroku, modulus, nodejitsu, digital ocean)
 - Switch to eslint
 - Add JSCS
-- David for npm modules
 - Match against idiomatic.js
 - Benchmarking (benchmark.js)
 - Make sending emails easy
