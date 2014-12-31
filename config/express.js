@@ -55,7 +55,6 @@ module.exports = function(db) {
   if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
     app.use(liveReload());
-    app.use(errorhandler());
 
     app.set('view cache', false);
     app.set('showStackError', true);
@@ -96,6 +95,11 @@ module.exports = function(db) {
       collection: config.mongo.sessionCollection
     })
   }));
+
+  // Error handling
+  if (process.env.NODE_ENV === 'development') {
+    app.use(errorhandler());
+  }
 
   return app;
 };
