@@ -20,7 +20,7 @@ exports.create = function(req, res) {
     return postCRUD.getResources();
   })
   .then(function(posts) {
-    res.json(posts);
+    res.status(201).json(posts);
   })
   .catch(function(err) {
     next(err);
