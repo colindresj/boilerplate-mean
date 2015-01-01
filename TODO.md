@@ -1,28 +1,27 @@
 ##Server-side
-- Improve server-side error handling and validation (artisan)
-- Add authorization (mustbe)
-- Add authentication (passport, grant)
 - Add unit tests
-- Create REPL module
-- Look into lusca for added security
-- Look into moonboots for loading client side apps
-- Add logging (winston, bunyan, intel)
 - Add documentation support (Docco, JSDoc, apiDoc)
+- Add authentication (passport, grant)
+- Add authorization (mustbe)
+- Improve server-side error handling and validation (artisan)
+- Add logging (winston, bunyan, intel)
+- Create REPL module
+- Look into moonboots for loading client side apps
 - Support for websockets (maybe?)
 
 ##Angular
-- Angular touch
 - Angular UI
+- Angular touch
 - Unit tests
 - End to end tests
 
 ##Other
-- Require istanbul
-- Add docker support
-- Add redis support
-- Add easy deploy (heroku, modulus, nodejitsu, digital ocean)
-- Switch to eslint
 - Add JSCS
+- Switch to eslint
 - Match against idiomatic.js
+- Require istanbul
 - Benchmarking (benchmark.js)
 - Make sending emails easy
+- Add redis support
+- Add easy deploy (heroku, modulus, nodejitsu, digital ocean)
+- Add docker support
