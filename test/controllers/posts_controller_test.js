@@ -1,18 +1,16 @@
 'use strict';
 
 var request = require('supertest'),
-    mongoose = require('mongoose'),
     expect = require('chai').expect,
-    Lorem = require('faker').Lorem,
     app = require(__dirname + '/../../server'),
-    agent = request.agent(app),
-    Post = mongoose.model('Post');
+    seed = require(__dirname + '/../../server/utils/seed_resources')('Post'),
+    agent = request.agent(app);
 
 describe('Posts Controller', function() {
   var posts;
 
   beforeEach(function(done) {
-    buildMockPosts(function(err, collection) {
+    seed(postSchema(), function(err, collection) {
       if (err) return done(err);
       posts = collection;
       done();
@@ -42,7 +40,7 @@ describe('Posts Controller', function() {
   });
 
   describe('POST /posts', function() {
-    var postAgent, data = buildPost();
+    var data = { title: 'Some Title', content: 'Some content' };
 
     it('responds with a 201 status', function(done) {
       agent.post('/api/v1/posts')
@@ -147,31 +145,9 @@ describe('Posts Controller', function() {
   });
 });
 
-function buildMockPosts(cb) {
-  Post.remove({}, function(err) {
-    if (err) return cb(err);
-
-    postCollection().then(function() {
-      cb(null, Array.prototype.slice.call(arguments));
-    }, function(err) {
-      cb(err);
-    });
-  });
-}
-
-function postCollection(len) {
-  var i, collection = [];
-
-  for (i = len || 2; i >= 1; i--) {
-    collection.push(buildPost());
-  }
-
-  return Post.create(collection);
-}
-
-function buildPost() {
+function postSchema() {
   return {
-    title: Lorem.sentence(),
-    content: Lorem.paragraph()
+    title: 'Lorem.sentence',
+    content: 'Lorem.paragraph'
   };
 }
