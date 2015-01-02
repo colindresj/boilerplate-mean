@@ -39,6 +39,7 @@
     "david": "^6.0.1",
     "faker": "^2.1.1",
     "gulp": "^3.8.10",
+    "gulp-mocha": "^2.0.0",
     "gulp-notify": "^2.1.0",
     "gulp-util": "^3.0.1",
     "mocha": "^2.1.0",
