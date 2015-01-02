@@ -1,20 +1,13 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-    Post = mongoose.model('Post'),
-    Faker = require('faker'),
-    seeds = [],
-    i;
+    seed = require(__dirname + '/../server/utils/seed_resources');
 
-for (i = 10; i >= 0; i--) {
-  seeds.push({
-    title: Faker.Lorem.sentence(),
-    content: Faker.Lorem.paragraph()
-  });
-}
+seed('Post')({
+  title: 'Lorem.sentence',
+  content: 'Lorem.paragraph'
+}, function(err, collection) {
+  if (err) return next(err);
 
-Post.find({}).remove(function() {
-  Post.create(seeds, function(err, post) {
-    console.log('Database seeded with dummy data.')
-  });
-});
+  console.log('Database seeded with dummy Posts.')
+}, 10);
