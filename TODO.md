@@ -16,6 +16,7 @@
 - End to end tests
 
 ##Other
+- Rename files using hyphens
 - Add JSCS
 - Switch to eslint
 - Match against idiomatic.js
