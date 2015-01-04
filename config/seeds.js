@@ -1,7 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-    seed = require(__dirname + '/../server/utils/seed_resources');
+    seed = require('../server/utils/seed_resources');
 
 seed('Post')({
   title: 'Lorem.sentence',

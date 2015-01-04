@@ -4,7 +4,7 @@ var express = require('express');
 
 module.exports = function(app) {
   var postsRouter = express.Router(),
-      postsController = require(__dirname + '/../controllers/posts_controller');
+      postsController = require('../controllers/posts_controller');
 
   postsRouter.route('/')
     .get(postsController.index)

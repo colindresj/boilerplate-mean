@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose'),
     Faker = require('faker'),
-    pathFromString = require(__dirname + '/../../lib/utils/').pathFromString;
+    pathFromString = require('../../lib/utils/').pathFromString;
 
 module.exports = function(modelName) {
   var Model = mongoose.model(modelName);
