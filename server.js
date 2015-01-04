@@ -3,15 +3,15 @@
 var mongoose = require('mongoose'),
     path = require('path'),
     config = require('./config/config'),
-    utils = require('./lib/utils'),
+    glob = require('glob'),
     db, app;
 
 // Connect to Mongo
 db = mongoose.connect(config.mongo.uri, config.mongo.options);
 
 // Load the models
-utils.loadFiles(path.join(__dirname, 'server/models'), function(path) {
-  require(path);
+glob.sync('server/models/*.js', { cwd: config.root }).forEach(function(file) {
+  require(path.join(config.root, file));
 });
 
 // Build the app

@@ -20,8 +20,8 @@ module.exports = function(db) {
       templates = require('consolidate'),
       favicon = require('serve-favicon'),
       mongo = require('connect-mongo'),
+      glob = require('glob'),
       config = require('./config'),
-      utils = require(config.root + '/lib/utils/'),
       MongoStore;
 
   app.locals.title = config.app.title;
@@ -77,8 +77,8 @@ module.exports = function(db) {
   app.locals.pretty = true;
 
   // Load routes
-  utils.loadFiles(path.join(config.root, 'server/routes'), function(path) {
-    require(path)(app);
+  glob.sync('server/routes/*.js', { cwd: config.root }).forEach(function(file) {
+    require(path.join(config.root, file))(app);
   });
 
   // Load up static assets
