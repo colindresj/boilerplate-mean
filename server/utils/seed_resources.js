@@ -1,7 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-    Faker = require('faker'),
+    faker = require('faker'),
     pathFromString = require('../../lib/utils/').pathFromString;
 
 module.exports = function(modelName) {
@@ -14,7 +14,7 @@ module.exports = function(modelName) {
       data = {};
 
       for (key in schema) {
-        method = pathFromString(Faker, schema[key]);
+        method = pathFromString(faker, schema[key]);
         data[key] = method();
       }
 

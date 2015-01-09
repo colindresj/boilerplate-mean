@@ -147,7 +147,7 @@ describe('Posts Controller', function() {
 
 function postSchema() {
   return {
-    title: 'Lorem.sentence',
-    content: 'Lorem.paragraph'
+    title: 'lorem.sentence',
+    content: 'lorem.paragraph'
   };
 }
