@@ -2,7 +2,7 @@
 
 var expect = require('chai').expect,
     sinon = require('sinon'),
-    pathFromString = require('../../lib/utils/path_from_string'),
+    pathFromString = require('../../lib/utils/path-from-string'),
     spy = sinon.spy();
 
 describe('#pathFromString', function() {

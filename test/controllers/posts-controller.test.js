@@ -3,7 +3,7 @@
 var request = require('supertest'),
     expect = require('chai').expect,
     app = require('../../server'),
-    seed = require('../../server/utils/seed_resources')('Post'),
+    seed = require('../../server/utils/seed-resources')('Post'),
     agent = request.agent(app);
 
 describe('Posts Controller', function() {

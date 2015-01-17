@@ -1,7 +1,7 @@
 'use strict';
 
 var _ = require('lodash'),
-    postCRUD = require('../utils/resource_methods')('Post');
+    postCRUD = require('../utils/resource-methods')('Post');
 
 // posts#index
 exports.index = function(req, res) {

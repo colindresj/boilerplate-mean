@@ -77,7 +77,7 @@ module.exports = function(db) {
   app.locals.pretty = true;
 
   // Load routes
-  glob.sync('server/routes/*.js', { cwd: config.root }).forEach(function(file) {
+  glob.sync('server/routes/*-routes.js', { cwd: config.root }).forEach(function(file) {
     require(path.join(config.root, file))(app);
   });
 
