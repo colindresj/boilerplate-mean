@@ -7,6 +7,6 @@ module.exports = {
     title: 'Boilerplate MEAN – Test'
   },
   mongo: {
-    uri:  'mongodb://localhost/boilerplate-mean-test',
+    uri:  'mongodb://localhost/boilerplate-mean-test'
   }
 };

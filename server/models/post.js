@@ -1,7 +1,8 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-    Schema = mongoose.Schema, postSchema;
+    Schema = mongoose.Schema,
+    postSchema;
 
 postSchema = new Schema({
   created: {

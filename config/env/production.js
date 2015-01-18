@@ -5,7 +5,7 @@ module.exports = {
   mongo: {
     uri: process.env.MONGOHQ_URL ||
          process.env.MONGOLAB_URI ||
-         'mongodb://localhost/boilerplate-mean',
+         'mongodb://localhost/boilerplate-mean'
   },
   assets: {
     styles: [],
@@ -17,6 +17,6 @@ module.exports = {
     }
   },
   csp: {
-    defaultSrc: ["'self'"]
+    defaultSrc: ['"self"']
   }
 };

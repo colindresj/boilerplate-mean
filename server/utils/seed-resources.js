@@ -27,6 +27,7 @@ module.exports = function(modelName) {
   function seed(schema, cb, len) {
     if (typeof schema == 'function') {
       cb = schema;
+
       return cb(new Error('No schema object received'));
     }
 

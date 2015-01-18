@@ -16,9 +16,7 @@
 - End to end tests
 
 ##Other
-- Add JSCS
 - Switch to eslint
-- Match against idiomatic.js
 - Require istanbul
 - Benchmarking (benchmark.js)
 - Make sending emails easy
